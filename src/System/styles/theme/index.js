@@ -37,6 +37,7 @@ export default {
 		},
 		text: {
 			primary: colors['color-secondary-700'],
+			contrast: colors['color-secondary-100'],
 			disabled: colors['colors-secondary-700']
 		}
 	}

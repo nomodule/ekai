@@ -126,41 +126,32 @@ export const useStyles = createUseStyles({
 		}
 	},
 	/* styles appiled to `variant="contained"` buttons */
+	contained: {
+		padding: '4px 8px'
+	},
 	containedPrimary: {
-		color: theme.palette.primary.main,
-		'&:hover': {
-			backgroundColor: theme.palette.primary.light
-		}
+		color: theme.palette.text.contrast,
+		backgroundColor: theme.palette.primary.main
 	},
 	containedSecondary: {
-		color: theme.palette.secondary.main,
-		'&:hover': {
-			backgroundColor: theme.palette.secondary.light
-		}
+		color: theme.palette.text.contrast,
+		backgroundColor: theme.palette.secondary.main
 	},
 	containedSuccess: {
-		color: theme.palette.success.main,
-		'&:hover': {
-			backgroundColor: theme.palette.success.light
-		}
+		color: theme.palette.text.contrast,
+		backgroundColor: theme.palette.success.main
 	},
 	containedWarning: {
-		color: theme.palette.warning.main,
-		'&:hover': {
-			backgroundColor: theme.palette.warning.light
-		}
+		color: theme.palette.text.contrast,
+		backgroundColor: theme.palette.warning.main
 	},
 	containedDanger: {
-		color: theme.palette.danger.main,
-		'&:hover': {
-			backgroundColor: theme.palette.danger.light
-		}
+		color: theme.palette.text.contrast,
+		backgroundColor: theme.palette.danger.main
 	},
 	containedInfo: {
-		color: theme.palette.info.main,
-		'&:hover': {
-			backgroundColor: theme.palette.info.light
-		}
+		color: theme.palette.text.contrast,
+		backgroundColor: theme.palette.info.main
 	},
 	/* Pseudo-class applied to the root element if keyboard focused. */
 	focusVisible: {}

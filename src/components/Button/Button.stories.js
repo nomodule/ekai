@@ -18,7 +18,8 @@ const colors = {
 
 const variant = {
 	Text: 'text',
-	Outlined: 'outlined'
+	Outlined: 'outlined',
+	Contained: 'contained'
 };
 
 export const overview = () => (
@@ -29,19 +30,7 @@ export const overview = () => (
 			onClick={action('click')}
 			disabled={boolean('Disabled', false)}
 		>
-			{text('Label', 'Button')}
+			{text('Label', 'Text Button')}
 		</Button>
 	</>
 );
-
-// export const defaultButton = () => (
-//   <Button onClick={action('clicked')}>Hello Button</Button>
-// );
-
-// export const emoji = () => (
-//   <Button onClick={action('clicked')}>
-//     <span role="img" aria-label="so cool">
-//       😀 😎 👍 💯
-//     </span>
-//   </Button>
-// );

@@ -2,7 +2,7 @@ import { addParameters, configure } from '@storybook/react';
 import './styles.css';
 addParameters({
 	options: {
-		showPanel: false
+		showPanel: true
 	}
 });
 
