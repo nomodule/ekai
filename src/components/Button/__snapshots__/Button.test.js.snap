@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> matches snapshop 1`] = `
+<DocumentFragment>
+  <button
+    class="root-0-2-1 secondary-0-2-18 text-0-2-2 textSecondary-0-2-5"
+  >
+    Button
+  </button>
+</DocumentFragment>
+`;
