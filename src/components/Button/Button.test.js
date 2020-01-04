@@ -6,19 +6,19 @@ import Button from './Button';
 afterEach(cleanup);
 
 describe('<Button />', () => {
-	it('should render button without crashing', () => {
-		const { getByRole } = render(<Button>Hello world</Button>);
-		expect(getByRole('button')).toBeInTheDocument();
-	});
+  it('should render button without crashing', () => {
+    const { getByRole } = render(<Button>Hello world</Button>);
+    expect(getByRole('button')).toBeInTheDocument();
+  });
 
-	it('should render disabled button', () => {
-		const { getByRole } = render(<Button disabled>Text Button</Button>);
-		expect(getByRole('button')).toBeDisabled();
-		expect(getByRole('button')).toHaveAttribute('disabled');
-	});
+  it('should render disabled button', () => {
+    const { getByRole } = render(<Button disabled>Text Button</Button>);
+    expect(getByRole('button')).toBeDisabled();
+    expect(getByRole('button')).toHaveAttribute('disabled');
+  });
 
-	it('matches snapshop', () => {
-		const { asFragment } = render(<Button>Button</Button>);
-		expect(asFragment()).toMatchSnapshot();
-	});
+  it('matches snapshop', () => {
+    const { asFragment } = render(<Button>Button</Button>);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
