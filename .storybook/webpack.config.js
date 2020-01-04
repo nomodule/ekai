@@ -1,13 +1,16 @@
+const path = require('path');
 module.exports = function({ config }) {
-	config.module.rules.push({
+	config.module.rules.unshift({
 		test: /\.stories\.jsx?$/,
 		loaders: [
 			{
 				loader: require.resolve('@storybook/source-loader'),
 				options: {
 					prettierConfig: {
-						printWidth: 100,
-						singleQuote: false
+						useTabs: true,
+						printWidth: 120,
+						semi: true,
+						singleQuote: true
 					}
 				}
 			}
