@@ -16,7 +16,7 @@ export const useStyles = createUseStyles({
     backgroundColor: 'transparent', // Reset default value
     // We disable the focus ring for mouse, touch and keyboard users.
     outline: 0,
-    border: 0,
+    border: '1px solid transparent',
     margin: 0, // Remove the margin in Safari
     borderRadius: 0,
     padding: 0, // Remove the padding in Firefox
@@ -45,37 +45,37 @@ export const useStyles = createUseStyles({
   /* styles appiled to `variant="text"` buttons */
   textPrimary: {
     color: theme.palette.primary.main,
-    '&:hover': {
+    '&:hover, &:focus': {
       backgroundColor: theme.palette.primary.light
     }
   },
   textSecondary: {
     color: theme.palette.secondary.main,
-    '&:hover': {
+    '&:hover, &:focus': {
       backgroundColor: theme.palette.secondary.light
     }
   },
   textSuccess: {
     color: theme.palette.success.main,
-    '&:hover': {
+    '&:hover, &:focus': {
       backgroundColor: theme.palette.success.light
     }
   },
   textWarning: {
     color: theme.palette.warning.main,
-    '&:hover': {
+    '&:hover, &:focus': {
       backgroundColor: theme.palette.warning.light
     }
   },
   textDanger: {
     color: theme.palette.danger.main,
-    '&:hover': {
+    '&:hover, &:focus': {
       backgroundColor: theme.palette.danger.light
     }
   },
   textInfo: {
     color: theme.palette.info.main,
-    '&:hover': {
+    '&:hover, &:focus': {
       backgroundColor: theme.palette.info.light
     }
   },
@@ -86,42 +86,42 @@ export const useStyles = createUseStyles({
   outlinedPrimary: {
     border: `1px solid ${theme.palette.primary.main}`,
     color: theme.palette.primary.main,
-    '&:hover': {
+    '&:hover, &:focus': {
       backgroundColor: theme.palette.primary.light
     }
   },
   outlinedSecondary: {
     border: `1px solid ${theme.palette.secondary.main}`,
     color: theme.palette.secondary.main,
-    '&:hover': {
+    '&:hover, &:focus': {
       backgroundColor: theme.palette.secondary.light
     }
   },
   outlinedSuccess: {
     border: `1px solid ${theme.palette.success.main}`,
     color: theme.palette.success.main,
-    '&:hover': {
+    '&:hover, &:focus': {
       backgroundColor: theme.palette.success.light
     }
   },
   outlinedWarning: {
     border: `1px solid ${theme.palette.warning.main}`,
     color: theme.palette.warning.main,
-    '&:hover': {
+    '&:hover, &:focus': {
       backgroundColor: theme.palette.warning.light
     }
   },
   outlinedDanger: {
     border: `1px solid ${theme.palette.danger.main}`,
     color: theme.palette.danger.main,
-    '&:hover': {
+    '&:hover, &:focus': {
       backgroundColor: theme.palette.danger.light
     }
   },
   outlinedInfo: {
     border: `1px solid ${theme.palette.info.main}`,
     color: theme.palette.info.main,
-    '&:hover': {
+    '&:hover, &:focus': {
       backgroundColor: theme.palette.info.light
     }
   },
@@ -130,28 +130,46 @@ export const useStyles = createUseStyles({
     padding: '4px 8px'
   },
   containedPrimary: {
-    color: theme.palette.text.contrast,
-    backgroundColor: theme.palette.primary.main
+    color: theme.palette.text.light,
+    backgroundColor: theme.palette.primary.main,
+    '&:hover, &:focus': {
+      backgroundColor: theme.palette.primary.dark
+    }
   },
   containedSecondary: {
-    color: theme.palette.text.contrast,
-    backgroundColor: theme.palette.secondary.main
+    color: theme.palette.text.light,
+    backgroundColor: theme.palette.secondary.main,
+    '&:hover, &:focus': {
+      backgroundColor: theme.palette.secondary.dark
+    }
   },
   containedSuccess: {
-    color: theme.palette.text.contrast,
-    backgroundColor: theme.palette.success.main
+    color: theme.palette.text.light,
+    backgroundColor: theme.palette.success.main,
+    '&:hover, &:focus': {
+      backgroundColor: theme.palette.primary.dark
+    }
   },
   containedWarning: {
-    color: theme.palette.text.contrast,
-    backgroundColor: theme.palette.warning.main
+    color: theme.palette.text.dark,
+    backgroundColor: theme.palette.warning.main,
+    '&:hover, &:focus': {
+      backgroundColor: theme.palette.warning.dark
+    }
   },
   containedDanger: {
-    color: theme.palette.text.contrast,
-    backgroundColor: theme.palette.danger.main
+    color: theme.palette.text.light,
+    backgroundColor: theme.palette.danger.main,
+    '&:hover, &:focus': {
+      backgroundColor: theme.palette.danger.dark
+    }
   },
   containedInfo: {
-    color: theme.palette.text.contrast,
-    backgroundColor: theme.palette.info.main
+    color: theme.palette.text.light,
+    backgroundColor: theme.palette.info.main,
+    '&:hover, &:focus': {
+      backgroundColor: theme.palette.info.dark
+    }
   },
   /* Pseudo-class applied to the root element if keyboard focused. */
   focusVisible: {}
@@ -178,7 +196,7 @@ export function Button(props) {
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   variant: PropTypes.string,
   disabled: PropTypes.bool,
   color: PropTypes.string

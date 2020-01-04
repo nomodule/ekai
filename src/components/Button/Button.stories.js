@@ -22,7 +22,7 @@ const variant = {
   Contained: 'contained'
 };
 
-export const overview = () => (
+export const playground = () => (
   <>
     <Button
       variant={radios('Variant', variant, 'Text')}
@@ -33,4 +33,58 @@ export const overview = () => (
       {text('Label', 'Text Button')}
     </Button>
   </>
+);
+
+export const kitchenSink = () => (
+  <div className="button-example">
+    <Button variant="text" color="primary">
+      Button
+    </Button>
+    <Button variant="text" color="secondary">
+      Button
+    </Button>
+    <Button variant="text" color="info">
+      Button
+    </Button>
+    <Button variant="text" color="warning">
+      Button
+    </Button>
+    <Button variant="text" color="danger">
+      Button
+    </Button>
+    <br />
+    <br />
+    <Button variant="contained" color="primary">
+      Button
+    </Button>
+    <Button variant="contained" color="secondary">
+      Button
+    </Button>
+    <Button variant="contained" color="info">
+      Button
+    </Button>
+    <Button variant="contained" color="warning">
+      Button
+    </Button>
+    <Button variant="contained" color="danger">
+      Button
+    </Button>
+    <br />
+    <br />
+    <Button variant="outlined" color="primary">
+      Button
+    </Button>
+    <Button variant="outlined" color="secondary">
+      Button
+    </Button>
+    <Button variant="outlined" color="info">
+      Button
+    </Button>
+    <Button variant="outlined" color="warning">
+      Button
+    </Button>
+    <Button variant="outlined" color="danger">
+      Button
+    </Button>
+  </div>
 );
