@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
 import theme from '../../System/styles/theme';
-import capitalize from '../utils/capitalize';
+import { capitalize, hexToRgba } from '../utils/';
 
 export const useStyles = createUseStyles({
   root: {
@@ -18,7 +18,7 @@ export const useStyles = createUseStyles({
     outline: 0,
     border: '1px solid transparent',
     margin: 0, // Remove the margin in Safari
-    borderRadius: 0,
+    borderRadius: 3,
     padding: 0, // Remove the padding in Firefox
     cursor: 'pointer',
     userSelect: 'none',
@@ -34,49 +34,49 @@ export const useStyles = createUseStyles({
     '&$disabled': {}
   },
   /* styles applied to text only buttons */
-  text: {
-    padding: '4px 8px'
-  },
   disabled: {
     pointerEvents: 'none', // Disable link interactions
     cursor: 'default',
     opacity: 0.4
   },
   /* styles appiled to `variant="text"` buttons */
+  text: {
+    padding: '4px 8px'
+  },
   textPrimary: {
-    color: theme.palette.primary.main,
+    color: theme.colors.blue[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.primary.light
+      backgroundColor: hexToRgba(theme.colors.blue[200], 0.5)
     }
   },
   textSecondary: {
-    color: theme.palette.secondary.main,
+    color: theme.colors.gray[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.secondary.light
+      backgroundColor: hexToRgba(theme.colors.gray[200], 0.5)
     }
   },
   textSuccess: {
-    color: theme.palette.success.main,
+    color: theme.colors.green[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.success.light
+      backgroundColor: hexToRgba(theme.colors.green[200], 0.5)
     }
   },
   textWarning: {
-    color: theme.palette.warning.main,
+    color: theme.colors.orange[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.warning.light
+      backgroundColor: hexToRgba(theme.colors.orange[200], 0.5)
     }
   },
   textDanger: {
-    color: theme.palette.danger.main,
+    color: theme.colors.red[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.danger.light
+      backgroundColor: hexToRgba(theme.colors.red[200], 0.5)
     }
   },
   textInfo: {
-    color: theme.palette.info.main,
+    color: theme.colors.teal[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.info.light
+      backgroundColor: hexToRgba(theme.colors.teal[200], 0.5)
     }
   },
   /* styles appiled to `variant="outlined"` buttons */
@@ -84,45 +84,46 @@ export const useStyles = createUseStyles({
     padding: '4px 8px'
   },
   outlinedPrimary: {
-    border: `1px solid ${theme.palette.primary.main}`,
-    color: theme.palette.primary.main,
+    border: `1px solid ${theme.colors.blue[500]}`,
+    color: theme.colors.blue[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.primary.light
+      backgroundColor: theme.colors.blue[100]
     }
   },
   outlinedSecondary: {
-    border: `1px solid ${theme.palette.secondary.main}`,
-    color: theme.palette.secondary.main,
+    border: `1px solid ${theme.colors.gray[500]}`,
+    color: theme.colors.gray[700],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.secondary.light
+      backgroundColor: theme.colors.gray[100]
     }
   },
   outlinedSuccess: {
-    border: `1px solid ${theme.palette.success.main}`,
-    color: theme.palette.success.main,
+    border: `1px solid ${theme.colors.green[500]}`,
+    color: theme.colors.green[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.success.light
+      backgroundColor: theme.colors.green[100]
     }
   },
   outlinedWarning: {
-    border: `1px solid ${theme.palette.warning.main}`,
-    color: theme.palette.warning.main,
+    border: `1px solid ${theme.colors.orange[500]}`,
+    color: theme.colors.orange[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.warning.light
+      backgroundColor: theme.colors.orange[100]
     }
   },
+
   outlinedDanger: {
-    border: `1px solid ${theme.palette.danger.main}`,
-    color: theme.palette.danger.main,
+    border: `1px solid ${theme.colors.red[500]}`,
+    color: theme.colors.red[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.danger.light
+      backgroundColor: theme.colors.red[100]
     }
   },
   outlinedInfo: {
-    border: `1px solid ${theme.palette.info.main}`,
-    color: theme.palette.info.main,
+    border: `1px solid ${theme.colors.teal[500]}`,
+    color: theme.colors.teal[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.info.light
+      backgroundColor: theme.colors.teal[100]
     }
   },
   /* styles appiled to `variant="contained"` buttons */
@@ -130,49 +131,48 @@ export const useStyles = createUseStyles({
     padding: '4px 8px'
   },
   containedPrimary: {
-    color: theme.palette.text.light,
-    backgroundColor: theme.palette.primary.main,
+    color: theme.colors.gray[100],
+    backgroundColor: theme.colors.blue[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.primary.dark
+      backgroundColor: theme.colors.blue[700]
     }
   },
   containedSecondary: {
-    color: theme.palette.text.light,
-    backgroundColor: theme.palette.secondary.main,
+    color: theme.colors.gray[100],
+    backgroundColor: theme.colors.gray[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.secondary.dark
+      backgroundColor: theme.colors.gray[700]
     }
   },
   containedSuccess: {
-    color: theme.palette.text.light,
-    backgroundColor: theme.palette.success.main,
+    color: theme.colors.gray[100],
+    backgroundColor: theme.colors.green[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.primary.dark
+      backgroundColor: theme.colors.green[700]
     }
   },
   containedWarning: {
-    color: theme.palette.text.dark,
-    backgroundColor: theme.palette.warning.main,
+    color: theme.colors.gray[100],
+    backgroundColor: theme.colors.orange[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.warning.dark
+      backgroundColor: theme.colors.orange[700]
     }
   },
   containedDanger: {
-    color: theme.palette.text.light,
-    backgroundColor: theme.palette.danger.main,
+    color: theme.colors.gray[100],
+    backgroundColor: theme.colors.red[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.danger.dark
+      backgroundColor: theme.colors.red[700]
     }
   },
   containedInfo: {
-    color: theme.palette.text.light,
-    backgroundColor: theme.palette.info.main,
+    color: theme.colors.gray[100],
+    backgroundColor: theme.colors.teal[500],
     '&:hover, &:focus': {
-      backgroundColor: theme.palette.info.dark
+      backgroundColor: theme.colors.teal[700]
     }
-  },
+  }
   /* Pseudo-class applied to the root element if keyboard focused. */
-  focusVisible: {}
 });
 
 export function Button(props) {
