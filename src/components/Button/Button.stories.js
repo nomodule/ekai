@@ -1,11 +1,12 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs, text, boolean, radios } from '@storybook/addon-knobs';
 import Button from './';
 
 export default {
   title: 'Button',
-  decorators: [withKnobs]
+  decorators: [withKnobs, withA11y]
 };
 
 const colors = {
