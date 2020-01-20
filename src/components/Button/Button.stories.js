@@ -1,11 +1,13 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean, radios } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
 import Button from './';
 
 export default {
   title: 'Button',
-  decorators: [withKnobs]
+  component: Button,
+  decorators: [withKnobs, withA11y]
 };
 
 const colors = {
@@ -22,7 +24,7 @@ const variant = {
   Contained: 'contained'
 };
 
-export const playground = () => (
+export const Playground = () => (
   <>
     <Button
       variant={radios('Variant', variant, 'Text')}
@@ -35,7 +37,7 @@ export const playground = () => (
   </>
 );
 
-export const kitchenSink = () => (
+export const KitchenSink = () => (
   <div className="button-example">
     <Button variant="text" color="primary">
       Button
